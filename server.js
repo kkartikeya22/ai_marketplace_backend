@@ -15,7 +15,11 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Socket.IO
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+const allowedOrigins = [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://critical-hitters-ai-seller-dashboard.netlify.app'
+];
 
 app.use(cors({
     origin: function(origin, callback){
@@ -29,6 +33,7 @@ app.use(cors({
     },
     credentials: true
 }));
+
 
 // Socket.IO
 const io = socket(server, {
